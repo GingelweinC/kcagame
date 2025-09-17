@@ -1,0 +1,16 @@
+{
+  "name": "kcagame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0",
+    "firebase": "^9.0.0",
+    "cors": "^2.8.5",
+    "pusher": "^5.0.0" 
+  }
+}

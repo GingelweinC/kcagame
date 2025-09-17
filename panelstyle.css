@@ -1,0 +1,172 @@
+:root {
+  --primary-color: #B6FFFD;
+  --secondary-color: #FF92C9;
+  --background: #0A0A0F;
+  --text-color: #FFFFFF;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background: var(--background);
+  color: var(--text-color);
+  margin: 0;
+  padding: 10px;
+  height: 500px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Scrollbars stylisées */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(182, 255, 253, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tab-link {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.tab-link.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--background);
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  height: calc(500px - 70px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) rgba(182, 255, 253, 0.1);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Conteneur profil + médaille */
+.profile-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.fa-crown, .fa-medal {
+  position: absolute;
+  z-index: 2;
+  top: -12px;
+  left: -12px;
+  font-size: 1.6em;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+.fa-crown { transform: rotate(-20deg); }
+
+
+.col-profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  object-fit: cover;
+}
+
+/* Ajustements colonnes */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.col-rank { width: 50px; text-align: center; }
+.col-profile { width: 70px; }
+.col-username { width: 160px; }
+.col-score { width: 90px; }
+.col-date { width: 100px; }
+
+/* Effets podium */
+tr:nth-child(1) td {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), transparent);
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+tr:nth-child(2) td {
+  background: linear-gradient(90deg, rgba(192, 192, 192, 0.15), transparent);
+  border-color: rgba(192, 192, 192, 0.3);
+}
+
+tr:nth-child(3) td {
+  background: linear-gradient(90deg, rgba(205, 127, 50, 0.15), transparent);
+  border-color: rgba(205, 127, 50, 0.3);
+}
+
+/* Section joueur */
+#player-info {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+#player-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 20px rgba(182, 255, 253, 0.4);
+}
+
+.player-stats p {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-stats strong {
+  color: var(--secondary-color);
+  font-size: 0.95em;
+}

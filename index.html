@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extension Twitch - Jeu</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="pusher.min.js"></script>
+  <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+  <style>
+    /* Styles généraux */
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #game-container {
+      display: block;
+      background-color: #00000000;
+    }
+    /* Overlay Game Over */
+    #game-over-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #B6FFFD;
+      display: none; /* Masqué par défaut */
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    #game-over-overlay h1 {
+      font-size: 60px;
+      margin: 20px;
+      color: #FF92C9;
+    }
+    #game-over-overlay p {
+      font-size: 30px;
+      margin: 10px;
+    }
+    #retry-button {
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #FF92C9;
+      color: #B6FFFD;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #retry-button:hover {
+      background-color: #ffb2dc;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game-container"></canvas>
+  <div id="game-over-overlay">
+    <h1>GAME OVER</h1>
+    <p id="final-score">Score: 0</p>
+    <button id="retry-button">Retry</button>
+  </div>
+  <div id="warning-message" style="
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 146, 201, 0.9);
+  color: #B6FFFD;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  display: none;
+  z-index: 999;
+"></div>
+
+  
+  <script src="game.js"></script>
+</body>
+</html>

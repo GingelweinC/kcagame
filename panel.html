@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard Twitch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css">    
+    <link rel="stylesheet" href="panelstyle.css">
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+</head>
+<body>
+    <div class="tabs">
+        <button class="tab-link active" data-tab="leaderboard">Leaderboard</button>
+        <button class="tab-link" data-tab="player">Mon Profil</button>
+    </div>
+
+    <div id="leaderboard" class="tab-content active">
+        <h2>Leaderboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-rank">#</th>
+                    <th class="col-profile">Profil</th>
+                    <th class="col-username">Nom</th>
+                    <th class="col-score">Score</th>
+                    <th class="col-date">Date</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <!-- Le JS générera les lignes ici -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="player" class="tab-content">
+        <h2 id="player-title">Mon Profil</h2>
+        <div id="player-info">
+            <img id="player-pic" src="images/default.jpg" alt="Profil">
+            <div class="player-stats">
+                <p><strong><i class="fas fa-trophy"></i> High Score :</strong> <span id="player-highscore">0</span></p>
+                <p><strong><i class="fas fa-gamepad"></i> Parties Jouées :</strong> <span id="player-games">0</span></p>
+                <p><strong><i class="fas fa-calendar-star"></i> Record :</strong> <span id="player-highscoredate">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="panel.js"></script>
+</body>
+</html>

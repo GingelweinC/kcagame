@@ -1,0 +1,9 @@
+{
+    "manifest_version": 2,
+    "version_number": "1.0.0",
+    "author_name": "Spelok",
+    "default_locale": "en",
+    "can_live_config": true,
+    "content_security_policy": "default-src 'self' https://5t1zwp94c4ahrjdv4jnbj05371f756.ext-twitch.tv https://kcagame.vercel.app; connect-src 'self' https://kcagame.vercel.app; img-src 'self' data: https://*.twitch.tv; script-src 'self'; style-src 'self';"
+  }
+  
